@@ -76,7 +76,7 @@ def run_profile_ctx_manager(backend_type, train):
     """
 
     print("")
-    print("EXPOSIGN THE PARALLEL BACKEND DIRECTLY")
+    print("EXPOSING THE PARALLEL BACKEND DIRECTLY")
 
     print(backend_type + ": 1 | workerNo: None")
     with parallel_backend(backend_type, n_jobs=1):
