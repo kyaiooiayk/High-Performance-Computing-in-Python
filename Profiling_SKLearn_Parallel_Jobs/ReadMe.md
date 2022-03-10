@@ -41,5 +41,5 @@
 ## References
 - [Interesting discussion on Physicall and logical CPU](https://stackoverflow.com/questions/1006289/how-to-find-out-the-number-of-cpus-using-python/36540625)
 - [How does skleanr uses parallel_backend](https://scikit-learn.org/stable/modules/generated/sklearn.utils.parallel_backend.html)
-
+- [Python Clocks Explained](https://www.webucator.com/article/python-clocks-explained/)
 
