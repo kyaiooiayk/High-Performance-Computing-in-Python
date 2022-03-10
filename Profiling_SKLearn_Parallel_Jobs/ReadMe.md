@@ -25,3 +25,12 @@
 
 
 
+| Methods | Adjustable | Monotonic | Resolution | Tick Rate |
+| ------- | ---------- | --------- | ---------- | --------- |
+| `process_time` | False | True | 1e-07 | 10,000,000 |
+| `clock` | False | True | 4.665306263360271e-07 | 2,143,482 |
+| `pref_counter` | False | True | 4.665306263360271e-07 | 2,143,482 |
+| `monotonic` | False | True | 0.015625 | 64 |
+| `tiem` | True | False| 0.015625 | 64 |
+
+
