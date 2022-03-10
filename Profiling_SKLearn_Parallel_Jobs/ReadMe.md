@@ -8,7 +8,7 @@
 - If you try: `from time import thread_time()` as it is in some old script this is NO longer available at least from python 3.9.x onwards. I guess this was substitute by something else.
 
 
-## How does python measures time?
+## How does python measure time?
 - In python there 4 ways you can time your code.
   - `monotonic()`
   - `perf_counter()`
@@ -23,8 +23,6 @@
   - **resolution**: The time between clock ticks. The smaller the number, the greater number of ticks per time unit. So, a high resolution clock has a very small resolution number.
   - **tick rate**: The number of ticks per second. This is the inverse of Resolution. A high resolution clock has a high tick rate.
 
-
-
 | Methods | Adjustable | Monotonic | Resolution | Tick Rate |
 | ------- | ---------- | --------- | ---------- | --------- |
 | `process_time` | False | True | 1e-07 | 10,000,000 |
@@ -32,5 +30,16 @@
 | `pref_counter` | False | True | 4.665306263360271e-07 | 2,143,482 |
 | `monotonic` | False | True | 0.015625 | 64 |
 | `tiem` | True | False| 0.015625 | 64 |
+
+## Practicle guidelines
+- `time.clock()` should NOT be used as of Python 3.3. It’s deprecated.
+- `time.time()` should NOT be used for comparing relative times. It’s not reliable because it’s adjustable.
+- `time.monotonic` is what you are looking for in all the situation where you were using either the two above.
+- `time.proces_time()` returns the value (in fractional seconds) of the sum of the system and  user CPU time of the current process. It does not include time elapsed during sleep. It is process-wide by definition. process_time() will give you the time spent by the  computer for the current process, a computer with an OS usually won’t spend 100% of the time on any given process. This counter **SHOULD NOT** count the time the cpu is running anything else. It is **PROCESS-WIDE** by definition.
+- `time.perf_counter()` returns the value (in fractional seconds) of a performance counter,  i.e. a clock with the highest available resolution to measure a short duration. It does  include time elapsed during sleep and is system-wide. perf_counter() should measure the real amount of time for a process to take, as if you used a stop watch. It is **SYSTEM-WIDE** by definition.
+
+## References
+- [Interesting discussion on Physicall and logical CPU](https://stackoverflow.com/questions/1006289/how-to-find-out-the-number-of-cpus-using-python/36540625)
+- [How does skleanr uses parallel_backend](https://scikit-learn.org/stable/modules/generated/sklearn.utils.parallel_backend.html)
 
 
