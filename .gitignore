@@ -1,1 +1,7 @@
-*.so
+DATASETS
+*.ipynb_checkpoints
+**/.DS_Store
+**/*.pyc
+**/__pycache__
+**/*.h5
+**/model.png
