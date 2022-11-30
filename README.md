@@ -1,11 +1,6 @@
 # High-Performance-Computing-in-Python
 Parallel computing, cython, numba, multi-processing and multi-threading in python
 
-<p align="center"> 
-  Visitors count since 30/11/2022<br>
-  <img src="https://profile-counter.glitch.me/kyaiooiayk/High-Performance-Computing-in-Python/count.svg"/>
-</p>
-
 ## Available tutorials
 - [Code_optimisation_hints](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Code_optimisation_hints.ipynb)
 - [Code profiling](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Code_profiling.ipynb)
