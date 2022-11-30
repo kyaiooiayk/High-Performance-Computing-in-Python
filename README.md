@@ -16,7 +16,7 @@ Parallel computing, cython, numba, multi-processing and multi-threading in pytho
 - [Parallel programming with Python (threading, multiprocessing](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Parallel%20programming%20with%20Python%20(threading%2C%20multiprocessing).ipynb)
 - [Profiling Scikit-Learn Parallel Job](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/tree/master/tutorials/Profiling_SKLearn_Parallel_Jobs)
 - [Python's and NumPy's in-place operator functions](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Python's%20and%20NumPy's%20in-place%20operator%20functions.ipynb)
-- [Scooop](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/tree/master/tutorials/Scoop)
+- [Scoop](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/tree/master/tutorials/Scoop)
 - [Speeding up NumPy array expressions with Numexpr](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Speeding%20up%20NumPy%20array%20expressions%20with%20Numexpr.ipynb)
 - [Vectorisation](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Vectorisation.ipynb)
 - [Vectorizing a classic for-loop in NumPy](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Vectorizing%20a%20classic%20for-loop%20in%20NumPy%20.ipynb)
