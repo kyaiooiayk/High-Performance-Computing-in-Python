@@ -8,6 +8,7 @@ Parallel computing, cython, numba, multi-processing and multi-threading in pytho
 - [Cython & Numba, C-like performance](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Cython%20%26%20Numba%2C%20C-like%20performance.ipynb)
 - [Cython vs. Numba vs. Parakeet on Bubblesort](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Cython%20vs.%20Numba%20vs.%20Parakeet%20on%20Bubblesort.ipynb)
 - [Dask and XGBoost](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/tree/master/tutorials/dask_with_XGBoost)
+- [How to cythonise your code](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/cythonizing/GitHub_MD_rendering/How%20to%20cythonize%20your%20code.ipynb)
 - [How to optimise scikit-learn execution time](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/How%20to%20optimise%20scikit-learn%20execution%20time.ipynb)
 - [Memoisation and decorators](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Memoisation%20and%20decorator.ipynb)
 - [Multiprocessing](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/tree/master/tutorials/Multiprocessing)
