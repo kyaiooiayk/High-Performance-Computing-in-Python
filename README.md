@@ -1,5 +1,6 @@
 # High-Performance-Computing-in-Python
-Parallel computing, cython, numba, multi-processing and multi-threading in python
+*Parallel computing, cython, numba, multi-processing and multi-threading in python.*
+***
 
 ## Available tutorials
 - [Code_optimisation_hints](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Code_optimisation_hints.ipynb)
@@ -20,6 +21,8 @@ Parallel computing, cython, numba, multi-processing and multi-threading in pytho
 - [Speeding up NumPy array expressions with Numexpr](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Speeding%20up%20NumPy%20array%20expressions%20with%20Numexpr.ipynb)
 - [Vectorisation](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Vectorisation.ipynb)
 - [Vectorizing a classic for-loop in NumPy](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Vectorizing%20a%20classic%20for-loop%20in%20NumPy%20.ipynb)
+***
 
 ## References
 - [The counter-intuitive rise of Python in scientific computing](https://cerfacs.fr/coop/fortran-vs-python)
+***
