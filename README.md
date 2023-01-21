@@ -3,7 +3,6 @@
 ***
 
 ## Available tutorials
-- [Code_optimisation_hints](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Code_optimisation_hints.ipynb)
 - [Code profiling](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Code_profiling.ipynb)
 - [Cython - Bridging the gap between Python and Fortran](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/%20Cython%20-%20Bridging%20the%20gap%20between%20Python%20and%20Fortran.ipynb)
 - [Cython & Numba, C-like performance](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Cython%20%26%20Numba%2C%20C-like%20performance.ipynb)
