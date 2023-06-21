@@ -3,7 +3,7 @@
 ***
 
 ## Motivation
-- Python was created for humans and to help thme experiment idea faster. Many details such as variable types and memory allocation and deallocation are then left to the runtime to decide.
+- Python was created for humans and to help them experiment idea faster. Many details such as variable types and memory allocation and deallocation are then left to the runtime to decide.
 - The downside is that Python is slower and harder to optimise - than languages like C or Fortran.
 - **So, why are we still sticking to python?** No! Most program have few part that are time-critical. Even, for this parts, itis possible to achieve the same speed as C or Fortran.
 ***
