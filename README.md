@@ -9,6 +9,8 @@
 ***
 
 ## ⁉Why parallelisation?
+- The growth of CPU clock speed (i.e., the speed at which a single chain of logic can be run) has slowed dramatically.
+- As a response, hardware makers have increased the number of cores (physical CPUs) embedded in each machine as a differnt avenue to fast execution: parallelization.
 ***
 
 ## 🏫Available tutorials
@@ -31,7 +33,12 @@
 - [Vectorizing a classic for-loop in NumPy](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Vectorizing%20a%20classic%20for-loop%20in%20NumPy%20.ipynb)
 ***
 
+## 🧑‍🎓Study notes
+- [Parallel computing](https://drive.google.com/drive/u/1/folders/13mzxrofldkbdgF_eT5EPZ1cEiCgOT78d)
+***
+
 ## 📚References
 - [The counter-intuitive rise of Python in scientific computing](https://cerfacs.fr/coop/fortran-vs-python)
 - [Need for speed](https://github.com/QuantEcon/lecture-python-programming.notebooks/blob/master/need_for_speed.ipynb)
+- [Parallelisation](https://github.com/QuantEcon/lecture-python-programming.notebooks/blob/master/parallelization.ipynb)
 ***
