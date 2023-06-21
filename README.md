@@ -1,14 +1,17 @@
-# 🏎High-Performance-Computing-in-Python🏎
+# ⏱High-Performance-Computing-in-Python
 *Parallel computing, cython, numba, multi-processing and multi-threading in Python.*
 ***
 
-## Motivation
+## 📌Motivation
 - Python was created for humans and to help them experiment idea faster. Many details such as variable types and memory allocation and deallocation are then left to the runtime to decide.
 - The downside is that Python is slower and harder to optimise - than languages like C or Fortran.
 - **So, why are we still sticking to python?** No! Most program have few part that are time-critical. Even, for this parts, itis possible to achieve the same speed as C or Fortran.
 ***
 
-## Available tutorials
+## ⁉Why parallelisation?
+***
+
+## 🏫Available tutorials
 - [Caching](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Caching.ipynb)
 - [Code profiling](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Code_profiling.ipynb)
 - [Cython - Bridging the gap between Python and Fortran](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/%20Cython%20-%20Bridging%20the%20gap%20between%20Python%20and%20Fortran.ipynb)
