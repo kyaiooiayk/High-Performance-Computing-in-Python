@@ -10,7 +10,7 @@
 
 ## ⁉Why parallelisation?
 - The growth of CPU clock speed (i.e., the speed at which a single chain of logic can be run) has slowed dramatically.
-- As a response, hardware makers have increased the number of cores (physical CPUs) embedded in each machine as a differnt avenue to fast execution: parallelization.
+- As a response, hardware makers have increased the number of cores (physical CPUs) embedded in each machine as a differnt avenue to fast execution: parallelisation.
 ***
 
 ## 🏫Available tutorials
