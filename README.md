@@ -43,4 +43,5 @@
 - [The counter-intuitive rise of Python in scientific computing](https://cerfacs.fr/coop/fortran-vs-python)
 - [Need for speed](https://github.com/QuantEcon/lecture-python-programming.notebooks/blob/master/need_for_speed.ipynb)
 - [Parallelisation](https://github.com/QuantEcon/lecture-python-programming.notebooks/blob/master/parallelization.ipynb)
+- [SuperFastPython](https://superfastpython.com/learning-paths/#Threading_Learning_Path)
 ***
