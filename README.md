@@ -19,6 +19,21 @@
 - Concurrency is what allows: concurrent, parallel and asynchronous execution.
 - ***
 
+## 📦Packages
+- Native:
+  - threading
+  - multiprocessing
+  - asyncio
+- Third parties:
+    - ray: a framework for scaling Python applications.
+    - tornado: Python web framework and asynchronous networking library.
+    - celery: Distributed task queue.
+    - sanic: Async Python web server and framework.
+    - aiohttp: Asynchronous HTTP client/server framework for asyncio
+    - dask: Parallel computing with task scheduling.
+    - uvloop: Ultra fast asyncio event loop.
+***
+
 ## 🏫Available tutorials
 - [Caching](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Caching.ipynb)
 - [Code profiling](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Code_profiling.ipynb)
