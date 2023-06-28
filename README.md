@@ -13,6 +13,12 @@
 - As a response, hardware makers have increased the number of cores (physical CPUs) embedded in each machine as a differnt avenue to fast execution: parallelisation.
 ***
 
+## ⁉What is concurrency?
+- Concurrency is the capability of having more than one computation in progress at the same time.
+- Concurrency is a different type of programming. So not only: procedural, functional and OOP.
+- Concurrency is what allows: concurrent, parallel and asynchronous execution.
+- ***
+
 ## 🏫Available tutorials
 - [Caching](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Caching.ipynb)
 - [Code profiling](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Code_profiling.ipynb)
