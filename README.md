@@ -21,9 +21,9 @@
 
 ## 📦Packages
 - Native:
-  - threading
-  - multiprocessing
-  - asyncio
+  - Python **multiprocessing** for process-based concurrency.
+  - Python **threading** for thread-based concurrency.
+  - Python **asyncio** for coroutine-based concurrency.
 - Third parties:
     - ray: a framework for scaling Python applications.
     - tornado: Python web framework and asynchronous networking library.
