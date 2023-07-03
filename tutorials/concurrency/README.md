@@ -18,3 +18,13 @@
     - dask: Parallel computing with task scheduling.
     - uvloop: Ultra fast asyncio event loop.
 ***
+
+## What is for what?
+   
+| Python native package | Type of concurrency |
+| :-: | :-: |
+| Python multiprocessing | Process-based concurrency |
+| Python threading | thread-based concurrenc |
+| Python asyncio | coroutine-based concurrency|
+
+***
