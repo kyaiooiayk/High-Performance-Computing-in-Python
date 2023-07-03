@@ -17,7 +17,7 @@
   - `clock()` -> deprecated from python 3.3.x onwards
 
 - The explaination provided on the official userguide seems to be a bit difficult to understand but the this [blog](https://www.webucator.com/article/python-clocks-explained/) provides the key to understand the difference. You asses each of the 4 methods above according to these 4 metrics:
-  - **adjustable**: The clock can be changed by the system administrator. This is important because an adjustable clock is unreliable when calculating time deltas. 
+  - **adjustable**: The clock can be changed by the system administrator. This is important because an adjustable clock is unreliable when calculating time deltas.
     So time should not be used to calculate time deltas.
   - **monotonic**: Monotonic clocks are unidirectional. They can only go forward. This means that they are only useful in giving you relative times – the times between two events.
   - **resolution**: The time between clock ticks. The smaller the number, the greater number of ticks per time unit. So, a high resolution clock has a very small resolution number.
@@ -42,4 +42,3 @@
 - [Interesting discussion on Physicall and logical CPU](https://stackoverflow.com/questions/1006289/how-to-find-out-the-number-of-cpus-using-python/36540625)
 - [How does skleanr uses parallel_backend](https://scikit-learn.org/stable/modules/generated/sklearn.utils.parallel_backend.html)
 - [Python Clocks Explained](https://www.webucator.com/article/python-clocks-explained/)
-

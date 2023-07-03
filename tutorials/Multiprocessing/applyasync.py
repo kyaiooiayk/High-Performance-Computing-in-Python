@@ -1,18 +1,20 @@
 import time
 from multiprocessing import Pool, current_process
 
+
 def slow_add(nsecs, x, y):
     """
     Function that sleeps for 'nsecs' seconds, and
     then returns the sum of x and y
     """
-    print("Process %s going to sleep for %s second(s)" % (current_process().pid,nsecs))
+    print("Process %s going to sleep for %s second(s)" % (current_process().pid, nsecs))
 
     time.sleep(nsecs)
 
     print("Process %s waking up" % current_process().pid)
 
     return x + y
+
 
 if __name__ == "__main__":
     print("Master process is PID %s" % current_process().pid)

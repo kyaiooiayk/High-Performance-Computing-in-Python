@@ -1,6 +1,7 @@
 import time
 from multiprocessing import Pool
 
+
 def slow_add(nsecs, x, y):
     """
     Function that sleeps for 'nsecs' seconds, and
@@ -8,6 +9,7 @@ def slow_add(nsecs, x, y):
     """
     time.sleep(nsecs)
     return x + y
+
 
 def slow_diff(nsecs, x, y):
     """
@@ -17,10 +19,12 @@ def slow_diff(nsecs, x, y):
     time.sleep(nsecs)
     return x - y
 
+
 def broken_function(nsecs):
     """Function that deliberately raises an AssertationError"""
     time.sleep(nsecs)
     raise ValueError("Called broken function")
+
 
 if __name__ == "__main__":
     futures = []

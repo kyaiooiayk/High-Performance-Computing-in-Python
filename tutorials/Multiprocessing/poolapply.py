@@ -1,6 +1,7 @@
 import time
 from multiprocessing import Pool, current_process, cpu_count
 
+
 def slow_function(nsecs):
     """
     Function that sleeps for 'nsecs' seconds, returning
@@ -16,10 +17,11 @@ def slow_function(nsecs):
 
     return nsecs
 
+
 if __name__ == "__main__":
     print("Master process is PID %s" % current_process().pid)
 
-    with Pool(processes = cpu_count()) as pool:
+    with Pool(processes=cpu_count()) as pool:
         r = pool.apply(slow_function, [5])
 
     print("Result is %s" % r)
