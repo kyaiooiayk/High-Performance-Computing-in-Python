@@ -1,4 +1,4 @@
-#from contextlib import contextmanager
+# from contextlib import contextmanager
 from contextlib import asynccontextmanager
 from subprocess import Popen
 from os import getpid
@@ -13,10 +13,11 @@ events = [
     "avx_insts.all",
 ]
 
+
 @asynccontextmanager
 def perf():
     """Benchmark this process with Linux's perf util.
-    
+
     Example usage:
 
         with perf():
@@ -24,13 +25,19 @@ def perf():
             more_code(x)
             all_this_code_will_be_measured()
     """
-    p = Popen([
+    p = Popen(
+        [
             # Run perf stat
-            "perf", "stat",
+            "perf",
+            "stat",
             # for the current Python process
-            "-p", str(getpid()),
+            "-p",
+            str(getpid()),
             # record the list of events mentioned above
-            "-e", ",".join(events)])
+            "-e",
+            ",".join(events),
+        ]
+    )
     # Ensure perf has started before running more
     # Python code. This will add ~0.1 to the elapsed
     # time reported by perf, so we also track elapsed
@@ -41,8 +48,7 @@ def perf():
         yield
     finally:
         print(f"Elapsed (seconds): {time() - start}")
-        print("Peak memory (MiB):",
-            int(getrusage(RUSAGE_SELF).ru_maxrss / 1024))
+        print("Peak memory (MiB):", int(getrusage(RUSAGE_SELF).ru_maxrss / 1024))
         p.send_signal(SIGINT)
 
 

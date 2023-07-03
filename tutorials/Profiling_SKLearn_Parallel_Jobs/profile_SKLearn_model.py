@@ -1,4 +1,3 @@
-
 # Import modules
 from time import time, process_time, perf_counter, monotonic
 from sklearn.datasets import make_classification
@@ -20,19 +19,23 @@ def train_SKL_model(n_jobs=None):
     # define the model
     model = RandomForestClassifier(n_estimators=500, n_jobs=n_jobs)
     # record current time
-    #start, p1, t1 = time(), process_time(), thread_time()
+    # start, p1, t1 = time(), process_time(), thread_time()
     start, p1, t1 = time(), process_time(), perf_counter()
     # fit the model
     model.fit(X, y)
     # record current time
-    #end, p2, t2 = time(), process_time(), thread_time()
+    # end, p2, t2 = time(), process_time(), thread_time()
     end, p2, t2 = time(), process_time(), perf_counter()
     # report execution time
     result = end - start
-    #pr, tr = p2 - p1, t2 - t1
+    # pr, tr = p2 - p1, t2 - t1
     pr, tr = p2 - p1, t2 - t1
-    #print(f"wall: {result}, process: {pr}, thread: {tr}")
-    print("Naive time: %.6f" %result, "| Process time: %.3f" %pr, " | System time: %.6f" %tr)
+    # print(f"wall: {result}, process: {pr}, thread: {tr}")
+    print(
+        "Naive time: %.6f" % result,
+        "| Process time: %.3f" % pr,
+        " | System time: %.6f" % tr,
+    )
 
 
 def run_profile(train):
@@ -44,7 +47,7 @@ def run_profile(train):
     print("")
     print("USING SKLEARN DEFAULT BEHAVIOUR")
     print("Default backend used: loky -> processed-based parallelism")
-    
+
     print("workerNo = 1")
     train(1)
 
@@ -66,12 +69,12 @@ def run_profile(train):
 
 def run_profile_ctx_manager(backend_type, train):
     """
-    I am not sure about it but it seems that this will first 
+    I am not sure about it but it seems that this will first
     span each thread and send the job to it. Is this what
     sklearn is doing already? This link explains it well.
     https://scikit-learn.org/stable/modules/generated/sklearn.utils.parallel_backend.html
 
-    It is particularly useful when calling into library code that uses joblib 
+    It is particularly useful when calling into library code that uses joblib
     internally but does not expose the backend argument in its own API.
     """
 
@@ -91,20 +94,29 @@ def run_profile_ctx_manager(backend_type, train):
     with parallel_backend(backend_type, n_jobs=-1):
         train(-1)
 
+
 if __name__ == "__main__":
-    
+
     print("=============")
     print("START TESTING")
-    print("=============")    
+    print("=============")
 
-    print("How many virtual cpu [multiprocessing.cpu_count()]?", multiprocessing.cpu_count())
+    print(
+        "How many virtual cpu [multiprocessing.cpu_count()]?",
+        multiprocessing.cpu_count(),
+    )
     print("How many virtual cpu [os.cpu_count()]?", os.cpu_count())
-    print("How many LOGICAL cpu [psutil.cpu_count(logical = True)]?", psutil.cpu_count(logical = True))
-    print("How many PHYSICAL cpu [psutil.cpu_count(logical = False)]?", psutil.cpu_count(logical = False))
-
+    print(
+        "How many LOGICAL cpu [psutil.cpu_count(logical = True)]?",
+        psutil.cpu_count(logical=True),
+    )
+    print(
+        "How many PHYSICAL cpu [psutil.cpu_count(logical = False)]?",
+        psutil.cpu_count(logical=False),
+    )
 
     run_profile(train)
-    
+
     print("\n---------------------------")
     run_profile_ctx_manager("loky", train)
     run_profile_ctx_manager("threading", train)
