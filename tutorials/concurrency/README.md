@@ -21,10 +21,12 @@
 
 ## What is for what?
    
-| Python native package | Type of concurrency |
-| :-: | :-: |
-| Python multiprocessing | Process-based concurrency |
-| Python threading | thread-based concurrenc |
-| Python asyncio | coroutine-based concurrency|
+| Python native package | Type of concurrency | What they work on|
+| :-: | :-: | :-: |
+| Python multiprocessing | Process-based concurrency | A process refers to a computer program. Each process is in fact one instance of the Python interpreter that executes Python instructions (Python byte-code). |
+| Python threading | thread-based concurrenc | A thread refers to a thread of execution by a computer program.
+
+Every Python program is a process with one thread called the main thread used to execute your program instructions. |
+| Python asyncio | coroutine-based concurrency | A coroutine is a unit of concurrency that is more lightweight than a thread. A single thread may execute many coroutines in an event loop. |
 
 ***
