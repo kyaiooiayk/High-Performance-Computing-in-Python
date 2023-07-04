@@ -21,12 +21,18 @@
 ***
 
 ## What is for what: decision matrix?
+<font size="1">
 
 | Python module | Type of concurrency | Request & Execution | What they work on/ what they create? | Memory management | Usage | Control | Protection |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| `multiprocessing` | Process-based | | A process refers to a computer program. Each process is in fact one instance of the Python interpreter that executes Python instructions (Python byte-code). | Processes do not have shared memory, instead, data is transmitted between processes using inter-process communication. | Use it for CPU-boind bound tasks | Operating system controls when a process is suspended, resumed and executed. | Requires `if __name__ == '__main__'` |
-| `threading` | Thread-based | | A thread refers to a thread of execution by a computer program. Every Python program is a process with one thread called the main thread used to execute your program instructions. | | Use it for I/O-bound task | Operating system controls when a thread is suspended, resumed and executed. | |
+| `multiprocessing` | Process-based | | A process refers to a computer program. Each process is in fact one instance of the Python interpreter that executes Python instructions (Python byte-code). | Processes do not have shared memory, instead, data is transmitted between processes using inter-process communication. | CPU-bound tasks | Operating system controls when a process is suspended, resumed and executed. | Requires `if __name__ == '__main__'` |
+
+| `threading` | Thread-based | | A thread refers to a thread of execution by a computer program. Every Python program is a process with one thread called the main thread used to execute your program instructions. | | IO-bound tasks | Operating system controls when a thread is suspended, resumed and executed. | |
+
 | `asyncio` | Coroutine-based | An action is requested but not performed at the same time. The function call will not wait and we can request data later. It allows called to perform other activities. | A coroutine is a unit of concurrency that is more lightweight than a thread. A single thread may execute many coroutines in an event loop. | | Non-blocking I/O | Coroutines themselves controls when a process is suspended, resumed and executed. | |
+
+</font>
+
 ***
 
 ## How to chose the best approach?
@@ -34,7 +40,7 @@
 - Second question: use pool of reusable workers or not (meanig using direcatly the class `Trhead` or `Process`)?
 - Third question: if you chose a reusable workers should you use Pool or PoolExecutor?
 
-![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/f4ce705d-9fe2-4176-aa27-f8dcfb78db50)
+![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/06797fa0-3fe4-4bb7-9bf0-b10b1c4cd472)
 
 ***
 
