@@ -49,12 +49,13 @@
 - A 4GHz CPU can execute 4 billion instructions per second. Compare to CPU speed, IO is much much slower
 ***
 
-## How to chose the best approach?
-- First question: which modules to use? this boils down to wether the process id CPU or IO-bound?
-- Second question: use pool of reusable workers or not (meanig using direcatly the class `Trhead` or `Process`)?
-- Third question: if you chose a reusable workers should you use Pool or PoolExecutor?
+## How do I choose the best approach?
+- **First question: CPU-bound vs. IO-bound?**
 
-![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/00482d53-4f91-4515-9776-61dfbd902453)
+- **Second question: Many Ad Hoc Tasks vs. One Complex Task?** Issue one or many ad hoc tasks that may benefit from a pool of reusable workers. 
+
+- **Third question: Pool vs. Executor?** Both provide pools of workers. The similarities are many and the differences are few and subtle.
+
 
 ***
 
