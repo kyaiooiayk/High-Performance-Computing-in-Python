@@ -1,4 +1,4 @@
-![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/18bda78a-4c76-4dc7-ad24-285ef5681581)# ⁉️What is concurrency?
+⁉️What is concurrency?
 - Concurrency is the capability of having more than one computation in progress at the same time.
 - Concurrency is a different type of programming. So not only: procedural, functional and OOP.
 - Concurrency is what allows: concurrent, parallel and asynchronous execution.
