@@ -1,4 +1,4 @@
-# ⁉️What is concurrency?
+![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/18bda78a-4c76-4dc7-ad24-285ef5681581)# ⁉️What is concurrency?
 - Concurrency is the capability of having more than one computation in progress at the same time.
 - Concurrency is a different type of programming. So not only: procedural, functional and OOP.
 - Concurrency is what allows: concurrent, parallel and asynchronous execution.
@@ -53,11 +53,11 @@
 ## How do I choose the best approach?
 - **First question: CPU-bound vs. IO-bound?**
 
-![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/fda085b9-4e3a-4966-bbf5-e620198b67f1)
+![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/523a7f76-c20e-4279-8bbb-9c24ba634624)
 
 - **Second question: Many Ad Hoc Tasks vs. One Complex Task?** Issue one or many ad hoc tasks that may benefit from a pool of reusable workers. 
 
-![Uploading image.png…]()
+![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/398c57d2-50fe-4741-86ed-68d32a282fea)
 
 - **Third question: Pool vs. Executor?** Both provide pools of workers. The similarities are many and the differences are few and subtle.
 
