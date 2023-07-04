@@ -42,7 +42,7 @@ table {
 - Second question: use pool of reusable workers or not (meanig using direcatly the class `Trhead` or `Process`)?
 - Third question: if you chose a reusable workers should you use Pool or PoolExecutor?
 
-![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/06797fa0-3fe4-4bb7-9bf0-b10b1c4cd472)
+![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/00482d53-4f91-4515-9776-61dfbd902453)
 
 ***
 
