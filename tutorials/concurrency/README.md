@@ -21,7 +21,11 @@
 ***
 
 ## What is for what: decision matrix?
-<font size="1">
+<style scoped>
+table {
+  font-size: 10px;
+}
+</style>
 
 | Python module | Type of concurrency | Request & Execution | What they work on/ what they create? | Memory management | Usage | Control | Protection |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -29,7 +33,7 @@
 | `threading` | Thread-based | | A thread refers to a thread of execution by a computer program. Every Python program is a process with one thread called the main thread used to execute your program instructions. | | IO-bound tasks | Operating system controls when a thread is suspended, resumed and executed. | |
 | `asyncio` | Coroutine-based | An action is requested but not performed at the same time. The function call will not wait and we can request data later. It allows called to perform other activities. | A coroutine is a unit of concurrency that is more lightweight than a thread. A single thread may execute many coroutines in an event loop. | | Non-blocking I/O | Coroutines themselves controls when a process is suspended, resumed and executed. | |
 
-</font>
+
 
 ***
 
@@ -38,7 +42,7 @@
 - Second question: use pool of reusable workers or not (meanig using direcatly the class `Trhead` or `Process`)?
 - Third question: if you chose a reusable workers should you use Pool or PoolExecutor?
 
-![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/08533656-638b-47f1-bf7a-646a44fadfa7)
+![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/06797fa0-3fe4-4bb7-9bf0-b10b1c4cd472)
 
 ***
 
