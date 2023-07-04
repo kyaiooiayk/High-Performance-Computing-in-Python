@@ -21,11 +21,6 @@
 ***
 
 ## What is for what: decision matrix?
-<style scoped>
-table {
-  font-size: 10px;
-}
-
 
 | Python module | Type of concurrency | Request & Execution | What they work on/ what they create? | Memory management | Usage | Control | Protection |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -33,7 +28,6 @@ table {
 | `threading` | Thread-based | | A thread refers to a thread of execution by a computer program. Every Python program is a process with one thread called the main thread used to execute your program instructions. | | IO-bound tasks | Operating system controls when a thread is suspended, resumed and executed. | |
 | `asyncio` | Coroutine-based | An action is requested but not performed at the same time. The function call will not wait and we can request data later. It allows called to perform other activities. | A coroutine is a unit of concurrency that is more lightweight than a thread. A single thread may execute many coroutines in an event loop. | | Non-blocking I/O | Coroutines themselves controls when a process is suspended, resumed and executed. | |
 
-</style>
 
 ***
 
