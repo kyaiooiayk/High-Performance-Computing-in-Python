@@ -21,7 +21,6 @@
 ***
 
 ## What is for what: decision matrix?
-
     
 | Python module | Type of concurrency | Request & Execution | What they work on/ what they create? | Memory management | Usage | Control | Protection |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -29,6 +28,8 @@
 | `threading` | Thread-based within a process | | A thread refers to a thread of execution by a computer program. Every Python program is a process with one thread called the main thread used to execute your program instructions. | | IO-bound tasks | Operating system controls when a thread is suspended, resumed and executed. | |
 | `asyncio` | Coroutine-based within a thread | An action is requested but not performed at the same time. The function call will not wait and we can request data later. It allows called to perform other activities. | A coroutine is a unit of concurrency that is more lightweight than a thread. A single thread may execute many coroutines in an event loop. | | Non-blocking I/O | Coroutines themselves controls when a process is suspended, resumed and executed. | |
 
+![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/21a2d169-01e6-4649-9b8d-668a2aaff1df)
+![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/81d69a11-4279-4ee1-8f40-4652446315da)
 
 ## CPU-bound vs. IO-bound?
 - A **CPU-bound** task is a type of task where the limiting factor is the speed of the CPU than the limit of IO. Examples:
@@ -52,10 +53,15 @@
 ## How do I choose the best approach?
 - **First question: CPU-bound vs. IO-bound?**
 
+![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/fda085b9-4e3a-4966-bbf5-e620198b67f1)
+
 - **Second question: Many Ad Hoc Tasks vs. One Complex Task?** Issue one or many ad hoc tasks that may benefit from a pool of reusable workers. 
+
+![Uploading image.png…]()
 
 - **Third question: Pool vs. Executor?** Both provide pools of workers. The similarities are many and the differences are few and subtle.
 
+![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/d5f63025-2755-4e38-abe7-43cae1e64eaf)
 
 ***
 
