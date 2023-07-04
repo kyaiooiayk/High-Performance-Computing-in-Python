@@ -23,14 +23,30 @@
 ## What is for what: decision matrix?
 
     
-| <font size=”0.1”> Python module</font> | Type of concurrency | Request & Execution | What they work on/ what they create? | Memory management | Usage | Control | Protection |
+| Python module | Type of concurrency | Request & Execution | What they work on/ what they create? | Memory management | Usage | Control | Protection |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | `multiprocessing` | Process-based | | A process refers to a computer program. Each process is in fact one instance of the Python interpreter that executes Python instructions (Python byte-code). | Processes do not have shared memory, instead, data is transmitted between processes using inter-process communication. | CPU-bound tasks | Operating system controls when a process is suspended, resumed and executed. | Requires `if __name__ == '__main__'` |
 | `threading` | Thread-based | | A thread refers to a thread of execution by a computer program. Every Python program is a process with one thread called the main thread used to execute your program instructions. | | IO-bound tasks | Operating system controls when a thread is suspended, resumed and executed. | |
 | `asyncio` | Coroutine-based | An action is requested but not performed at the same time. The function call will not wait and we can request data later. It allows called to perform other activities. | A coroutine is a unit of concurrency that is more lightweight than a thread. A single thread may execute many coroutines in an event loop. | | Non-blocking I/O | Coroutines themselves controls when a process is suspended, resumed and executed. | |
 
 
+## CPU-bound vs. IO-bound?
+- A **CPU-bound** task is a type of task where the limiting factor is the speed of the CPU than the limit of IO. Examples:
+    - Calculating points in a fractal
+    - Estimating P
+    - Factoring primes
+    - Parsing HTML, JSON, etc. documents
+    - Processing text and running simulations. 
 
+- A **IO-bound** task is a type of task where the limiting factor is the the IO speed. These are operation that involve reading from or writing to a device, file, or socket connection. Examples:
+    - Reading or writing a file from the hard drive.
+    - Reading or writing to standard output, input, or error (stdin, stdout, stderr).
+    - Printing a document.
+    - Downloading or uploading a file.
+    - Querying a server.
+    - Querying a database.
+    - Taking a photo or recording a video
+- A 4GHz CPU can execute 4 billion instructions per second. Compare to CPU speed, IO is much much slower
 ***
 
 ## How to chose the best approach?
@@ -45,4 +61,5 @@
 ## References
 - [Superfastpython](https://superfastpython.com)
 - [How to choose btw APIs?](https://superfastpython.com/python-concurrency-choose-api/)
+- [Notes on high-performing computing](https://drive.google.com/drive/u/1/folders/13mzxrofldkbdgF_eT5EPZ1cEiCgOT78d)
 ***
