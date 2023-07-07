@@ -69,4 +69,5 @@
 - [Superfastpython](https://superfastpython.com)
 - [How to choose btw APIs?](https://superfastpython.com/python-concurrency-choose-api/)
 - [Notes on high-performing computing](https://drive.google.com/drive/u/1/folders/13mzxrofldkbdgF_eT5EPZ1cEiCgOT78d)
+- [Python Concurrency Glossary](https://superfastpython.com/python-concurrency-glossary/)
 ***
