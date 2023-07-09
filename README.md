@@ -37,6 +37,7 @@
 ## 🏫Available tutorials
 - [Caching](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Caching.ipynb)
 - [Code profiling](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Code_profiling.ipynb)
+- [Concurrency](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/tree/main/tutorials/concurrency)
 - [Cython - Bridging the gap between Python and Fortran](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/%20Cython%20-%20Bridging%20the%20gap%20between%20Python%20and%20Fortran.ipynb)
 - [Cython & Numba, C-like performance](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Cython%20%26%20Numba%2C%20C-like%20performance.ipynb)
 - [Cython vs. Numba vs. Parakeet on Bubblesort](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/GitHub_MD_rendering/Cython%20vs.%20Numba%20vs.%20Parakeet%20on%20Bubblesort.ipynb)

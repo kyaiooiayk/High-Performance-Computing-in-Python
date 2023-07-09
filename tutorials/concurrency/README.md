@@ -1,9 +1,12 @@
-⁉️What is concurrency?
+# Concurrency
+***
+
+## ⁉️What is concurrency?
 - Concurrency is the capability of having more than one computation in progress at the same time.
 - Concurrency is a different type of programming. So not only: procedural, functional and OOP.
 - Concurrency is what allows: concurrent, parallel and asynchronous execution.
 - Concurrency is not Parallelism. While concurrency implies that multiple tasks are in process simultaneously, it does not imply that they are running together in parallel.
-- ***
+***
 
 ## 📦Packages
 - Native:
