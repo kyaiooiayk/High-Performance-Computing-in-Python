@@ -41,7 +41,6 @@
     - Factoring primes
     - Parsing HTML, JSON, etc. documents
     - Processing text and running simulations. 
-
 - A **IO-bound** task is a type of task where the limiting factor is the the IO speed. These are operation that involve reading from or writing to a device, file, or socket connection. Examples:
     - Reading or writing a file from the hard drive.
     - Reading or writing to standard output, input, or error (stdin, stdout, stderr).
