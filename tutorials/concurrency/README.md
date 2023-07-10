@@ -51,6 +51,7 @@
     - Querying a database.
     - Taking a photo or recording a video
 - A 4GHz CPU can execute 4 billion instructions per second. Compare to CPU speed, IO is much much slower
+- **Important**: typically, processes are used for CPU-bound tasks and threads are used for IO-bound tasks, and this is a good heuristic, but this does not have to be the case. Again, this is an heuristic rule. At the end of the day, try and take what works best for you. 
 ***
 
 ## How do I choose the best approach?
