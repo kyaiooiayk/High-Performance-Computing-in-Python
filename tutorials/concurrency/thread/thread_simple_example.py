@@ -5,6 +5,7 @@
 from time import sleep
 from threading import Thread
 
+
 # a simple task that blocks for a moment and prints a message
 def task():
     # block for a moment
