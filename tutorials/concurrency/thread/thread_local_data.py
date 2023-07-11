@@ -1,4 +1,5 @@
 # https://superfastpython.com/threading-in-python/
+# https://superfastpython.com/thread-local-data/
 
 # example of thread local storage
 from time import sleep

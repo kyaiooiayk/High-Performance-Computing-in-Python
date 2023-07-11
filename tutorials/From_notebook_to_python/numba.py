@@ -330,7 +330,6 @@ class Solow:
         z=2.0,  # productivity
         k=1.0,
     ):  # current capital stock
-
         self.n, self.s, self.δ, self.α, self.z = n, s, δ, α, z
         self.k = k
 

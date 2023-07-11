@@ -1,4 +1,5 @@
 # https://superfastpython.com/extend-thread-class/
+# https://superfastpython.com/join-a-thread-in-python/
 
 # example of extending the Thread class and passing arguments
 from time import sleep
@@ -28,7 +29,9 @@ class CustomThread(Thread):
 thread = CustomThread(0.5)
 # start the thread
 thread.start()
-# wait for the thread to finish
+# Wait (actively blocking) for the thread to finish
+# This has the effect of blocking the current thread until
+# the target thread that has been joined has terminated.
 print("Waiting for the thread to finish")
 thread.join()
 # get the value returned from run

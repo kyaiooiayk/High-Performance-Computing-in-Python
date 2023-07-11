@@ -263,7 +263,6 @@ from cython import __version__ as cython__version__
 
 
 def print_sysinfo():
-
     print("\nPython version  :", platform.python_version())
     print("compiler        :", platform.python_compiler())
     print("Cython version  :", cython__version__)

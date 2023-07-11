@@ -96,7 +96,6 @@ def run_profile_ctx_manager(backend_type, train):
 
 
 if __name__ == "__main__":
-
     print("=============")
     print("START TESTING")
     print("=============")

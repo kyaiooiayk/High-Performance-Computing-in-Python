@@ -45,6 +45,7 @@ random.seed(123)
 # Define an output queue
 output = mp.Queue()
 
+
 # define a example function
 def rand_string(length, output):
     """Generates a random string of numbers, lower- and uppercase chars."""
@@ -85,6 +86,7 @@ print(results)
 
 # Define an output queue
 output = mp.Queue()
+
 
 # define a example function
 def rand_string(length, pos, output):
@@ -446,7 +448,6 @@ import platform
 
 
 def print_sysinfo():
-
     print("\nPython version  :", platform.python_version())
     print("compiler        :", platform.python_compiler())
 

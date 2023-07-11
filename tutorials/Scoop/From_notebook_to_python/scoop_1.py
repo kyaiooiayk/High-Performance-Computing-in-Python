@@ -42,7 +42,6 @@ def sum(x, y):
 
 
 if __name__ == "__main__":
-
     a = range(1, 101)
     b = range(101, 201)
 
@@ -96,7 +95,6 @@ def sum(x, y):
 
 
 if __name__ == "__main__":
-
     a = range(1, 101)
     b = range(101, 201)
 

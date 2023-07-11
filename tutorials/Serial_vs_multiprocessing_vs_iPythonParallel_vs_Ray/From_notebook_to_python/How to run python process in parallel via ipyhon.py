@@ -127,7 +127,6 @@ task_durations = [1] * 16
 
 # request a cluster
 with ipp.Cluster() as rc:
-
     # get a view on the cluster
     view = rc.load_balanced_view()
 
