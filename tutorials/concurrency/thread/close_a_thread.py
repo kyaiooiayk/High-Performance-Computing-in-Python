@@ -19,8 +19,14 @@ def task():
         sleep(value)
         # check if we should forcefully close the thread
         if value > 0.9:
-            print("Closing thread")
+            print("Closing thread by return")
             return
+        elif value < 0.9 and value > 0.8:
+            print("Closing thread by sys.exit()")
+            sys.exit()
+        elif value < 0.8 and value > 0.7:
+            print("Closing thread by raise")
+            raise Exception("Stop now!")
 
 
 # create and configure the new thread
