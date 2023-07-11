@@ -20,7 +20,6 @@ def para(func_: None = None, no_thread: int = 1):
     def _decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
-
             print("argument", *args)
             print("kwargs", *kwargs)
 

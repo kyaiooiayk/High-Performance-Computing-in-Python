@@ -129,7 +129,7 @@ np_c2 = np.array(coords2)
 def eucldist_forloop(coords1, coords2):
     """Calculates the euclidean distance between 2 lists of coordinates."""
     dist = 0
-    for (x, y) in zip(coords1, coords2):
+    for x, y in zip(coords1, coords2):
         dist += (x - y) ** 2
     return dist**0.5
 
@@ -183,7 +183,6 @@ funcs = (
 times = {f: [] for f in funcs}
 orders_n = [10**i for i in range(1, 8)]
 for n in orders_n:
-
     c1 = [random.randint(0, 100) for _ in range(n)]
     c2 = [random.randint(0, 100) for _ in range(n)]
     np_c1 = np.array(c1)
@@ -242,7 +241,6 @@ labels = {
 
 
 def plot(times, orders_n, labels):
-
     colors = ("cyan", "#7DE786", "black", "blue")
     linestyles = ("-", "-", "--", "--")
     fig = plt.figure(figsize=(11, 10))

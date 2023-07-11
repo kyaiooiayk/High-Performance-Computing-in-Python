@@ -1,4 +1,5 @@
 # https://superfastpython.com/threading-in-python/
+# https://superfastpython.com/how-to-configure-threads-in-python/
 
 from threading import Thread
 from threading import current_thread

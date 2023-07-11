@@ -1,4 +1,5 @@
 # https://superfastpython.com/threading-in-python/
+# https://superfastpython.com/thread-exception-handling/
 
 # example of an unhandled exception in a thread
 from time import sleep

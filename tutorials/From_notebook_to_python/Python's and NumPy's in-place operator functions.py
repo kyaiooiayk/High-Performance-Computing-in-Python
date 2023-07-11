@@ -69,7 +69,6 @@ import timeit
 py_int, py_list, np_ary = [[], []], [[], []], [[], []]
 
 for i in range(100, 1100, 100):
-
     a = i
     b = i
     py_int[0].append(
@@ -137,7 +136,6 @@ import multiprocessing
 
 
 def print_sysinfo():
-
     print("\nPython version  :", platform.python_version())
     print("compiler        :", platform.python_compiler())
 
@@ -163,7 +161,6 @@ import matplotlib.pyplot as plt
 
 
 def plot():
-
     data = [py_int, py_list, np_ary]
     colors = ["g", "b"]
     x_vals = range(100, 1100, 100)
