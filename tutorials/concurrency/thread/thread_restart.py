@@ -21,7 +21,9 @@ thread = Thread(target=task)
 thread.start()
 # wait for the thread to finish
 thread.join()
+
 # create a new thread with the same config
+# You cannot restart a thread in Python, instead you must create and start a new thread with the same configuration.
 thread2 = Thread(target=task)
 # start the new thread
 thread2.start()
