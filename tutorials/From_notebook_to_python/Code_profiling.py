@@ -32,7 +32,7 @@
 # In[1]:
 
 
-get_ipython().run_cell_magic("timeit", "-n1000 ", "l = [k for k in range(10**2)]")
+get_ipython().run_cell_magic("timeit", "-n1000", "l = [k for k in range(10**2)]\n")
 
 
 # In[2]:
@@ -197,7 +197,7 @@ get_ipython().system("ls")
 get_ipython().run_cell_magic(
     "file",
     "sum_of_lists.py",
-    "def sum_of_lists(N): \n    total = 0\n    for i in range(5): \n            L=[j^(j>>i) for j in range(N)] \n            total += sum(L)\n    return total",
+    "def sum_of_lists(N): \n    total = 0\n    for i in range(5): \n            L=[j^(j>>i) for j in range(N)] \n            total += sum(L)\n    return total\n",
 )
 
 

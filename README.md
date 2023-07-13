@@ -55,7 +55,7 @@
 - [Speeding up NumPy array expressions with Numexpr](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/Speeding%20up%20NumPy%20array%20expressions%20with%20Numexpr.ipynb)
 - [Vectorisation](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/Vectorisation.ipynb)
 - [Vectorizing a classic for-loop in NumPy](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/Vectorizing%20a%20classic%20for-loop%20in%20NumPy%20.ipynb)
-- [Atomic operations](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/master/tutorials/Atomic%20operations%20.ipynb)
+- [Atomic operations](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/blob/main/tutorials/Atomic%20operations.ipynb)
 ***
 
 ## 🧑‍🎓Study notes

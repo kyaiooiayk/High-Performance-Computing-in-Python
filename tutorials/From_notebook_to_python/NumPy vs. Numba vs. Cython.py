@@ -215,7 +215,7 @@ get_ipython().run_line_magic("load_ext", "Cython")
 get_ipython().run_cell_magic(
     "cython",
     "-a",
-    'import random  \ndef average_cy1(int n):  \n    """\n    Adds static type declarations for the variables n, i, and s.\n    """\n    cdef int i  \n    cdef float s = 0  \n    for i in range(n):\n        s += random.random()\n    return s / n',
+    'import random  \ndef average_cy1(int n):  \n    """\n    Adds static type declarations for the variables n, i, and s.\n    """\n    cdef int i  \n    cdef float s = 0  \n    for i in range(n):\n        s += random.random()\n    return s / n\n',
 )
 
 
@@ -247,7 +247,7 @@ get_ipython().run_line_magic("timeit", "average_cy1(n)")
 get_ipython().run_cell_magic(
     "cython",
     "",
-    "\n#Imports a random number generator from C.\nfrom libc.stdlib cimport rand  \n\n# Imports a constant value for the scaling of the random numbers.\ncdef extern from 'limits.h':  \n    int INT_MAX  \ncdef int i\ncdef float rn\nfor i in range(5):\n    # Adds uniformly distributed random numbers from the interval (0, 1), after scal‐ ing\n    rn = rand() / INT_MAX  \n    print(rn)",
+    "\n#Imports a random number generator from C.\nfrom libc.stdlib cimport rand  \n\n# Imports a constant value for the scaling of the random numbers.\ncdef extern from 'limits.h':  \n    int INT_MAX  \ncdef int i\ncdef float rn\nfor i in range(5):\n    # Adds uniformly distributed random numbers from the interval (0, 1), after scal‐ ing\n    rn = rand() / INT_MAX  \n    print(rn)\n",
 )
 
 
@@ -257,7 +257,7 @@ get_ipython().run_cell_magic(
 get_ipython().run_cell_magic(
     "cython",
     "-a",
-    "# Imports a random number generator from C.\nfrom libc.stdlib cimport rand  \n\n# Imports a constant value for the scaling of the random numbers.\ncdef extern from 'limits.h':  \n    int INT_MAX  \ndef average_cy2(int n):\n    cdef int i\n    cdef float s = 0\n    for i in range(n):\n        # Adds uniformly distributed random numbers from the interval (0, 1), after scal‐ ing\n        s += rand() / INT_MAX  \n    return s / n",
+    "# Imports a random number generator from C.\nfrom libc.stdlib cimport rand  \n\n# Imports a constant value for the scaling of the random numbers.\ncdef extern from 'limits.h':  \n    int INT_MAX  \ndef average_cy2(int n):\n    cdef int i\n    cdef float s = 0\n    for i in range(n):\n        # Adds uniformly distributed random numbers from the interval (0, 1), after scal‐ ing\n        s += rand() / INT_MAX  \n    return s / n\n",
 )
 
 

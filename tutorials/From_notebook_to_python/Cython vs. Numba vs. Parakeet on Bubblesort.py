@@ -15,7 +15,7 @@ def python_bubblesort(a_list):
     length = len(a_list)
     swapped = 1
     for i in xrange(0, length):
-        if swapped:
+        if swapped: 
             swapped = 0
             for ele in xrange(0, length-i-1):
                 if a_list[ele] > a_list[ele + 1]:
@@ -34,7 +34,7 @@ def python_bubblesort_ary(np_ary):
     length = np_ary.shape[0]
     swapped = 1
     for i in xrange(0, length):
-        if swapped:
+        if swapped: 
             swapped = 0
             for ele in xrange(0, length-i-1):
                 if np_ary[ele] > np_ary[ele + 1]:
@@ -47,9 +47,9 @@ def python_bubblesort_ary(np_ary):
 
 # ### Bubble sort implemented in Cython
 
-# Maybe we can speed things up a little bit via [Cython's C-extensions for Python](http://cython.org). Cython is basically a hybrid between C and Python and can be pictured as compiled Python code with type declarations.
-# Since we are working in an IPython notebook here, we can make use of the very convenient *IPython magic*: It will take care of the conversion to C code, the compilation, and eventually the loading of the function.
-#
+# Maybe we can speed things up a little bit via [Cython's C-extensions for Python](http://cython.org). Cython is basically a hybrid between C and Python and can be pictured as compiled Python code with type declarations.  
+# Since we are working in an IPython notebook here, we can make use of the very convenient *IPython magic*: It will take care of the conversion to C code, the compilation, and eventually the loading of the function.  
+# 
 # Note that the static type declarations that we add via `cdef` are note required for Cython to work, but it will speed things up tremendously.
 
 # In[3]:
@@ -61,7 +61,7 @@ get_ipython().run_line_magic('load_ext', 'cythonmagic')
 # In[4]:
 
 
-get_ipython().run_cell_magic('cython', '', 'import numpy as np\ncimport numpy as np\ncimport cython\n@cython.boundscheck(False) \n@cython.wraparound(False)\ncpdef cython_bubblesort(inp_ary):\n    """ The Cython implementation of Bubblesort with NumPy memoryview."""\n    cdef unsigned long length, i, swapped, ele, temp\n    cdef long[:] np_ary = inp_ary\n    length = np_ary.shape[0]\n    swapped = 1\n    for i in xrange(0, length):\n        if swapped: \n            swapped = 0\n            for ele in xrange(0, length-i-1):\n                if np_ary[ele] > np_ary[ele + 1]:\n                    temp = np_ary[ele + 1]\n                    np_ary[ele + 1] = np_ary[ele]\n                    np_ary[ele] = temp\n                    swapped = 1\n    return inp_ary')
+get_ipython().run_cell_magic('cython', '', 'import numpy as np\ncimport numpy as np\ncimport cython\n@cython.boundscheck(False) \n@cython.wraparound(False)\ncpdef cython_bubblesort(inp_ary):\n    """ The Cython implementation of Bubblesort with NumPy memoryview."""\n    cdef unsigned long length, i, swapped, ele, temp\n    cdef long[:] np_ary = inp_ary\n    length = np_ary.shape[0]\n    swapped = 1\n    for i in xrange(0, length):\n        if swapped: \n            swapped = 0\n            for ele in xrange(0, length-i-1):\n                if np_ary[ele] > np_ary[ele + 1]:\n                    temp = np_ary[ele + 1]\n                    np_ary[ele + 1] = np_ary[ele]\n                    np_ary[ele] = temp\n                    swapped = 1\n    return inp_ary\n')
 
 
 # ### Bubble sort implemented in Numba
@@ -78,7 +78,7 @@ def numba_bubblesort(np_ary):
     length = np_ary.shape[0]
     swapped = 1
     for i in xrange(0, length):
-        if swapped:
+        if swapped: 
             swapped = 0
             for ele in xrange(0, length-i-1):
                 if np_ary[ele] > np_ary[ele + 1]:
@@ -92,7 +92,7 @@ def numba_bubblesort(np_ary):
 # ### Bubble sort implemented in  parakeet
 
 # Similar to Numba,  [parakeet](http://www.parakeetpython.com) is a Python compiler that optimizes the runtime of numerical computations based on the NumPy data types, such as NumPy arrays.
-#
+# 
 # The usage is also similar to Numba where we just have to put the `jit` decorator on top of the function we want to optimize.
 
 # In[6]:
@@ -105,7 +105,7 @@ def parakeet_bubblesort(np_ary):
     length = np_ary.shape[0]
     swapped = 1
     for i in xrange(0, length):
-        if swapped:
+        if swapped: 
             swapped = 0
             for ele in xrange(0, length-i-1):
                 if np_ary[ele] > np_ary[ele + 1]:
@@ -128,7 +128,7 @@ random.seed(4354353)
 
 l = np.asarray([random.randint(1,1000) for num in xrange(1, 1000)])
 l_sorted = np.sort(l)
-for f in [python_bubblesort, python_bubblesort_ary, cython_bubblesort,
+for f in [python_bubblesort, python_bubblesort_ary, cython_bubblesort, 
           numba_bubblesort, parakeet_bubblesort]:
     assert(l_sorted.all() == f(copy.copy(l)).all())
 print('Bubblesort works correctly')
@@ -159,7 +159,7 @@ for n in orders_n:
         l_copy = copy.deepcopy(l)
         if f != 'python_bubblesort':
             l_copy = np.asarray(l_copy)
-        timings[f].append(min(timeit.Timer('%s(l_copy)' %f,
+        timings[f].append(min(timeit.Timer('%s(l_copy)' %f, 
                       'from __main__ import %s, l_copy' %f)
                               .repeat(repeat=3, number=10)))
 
@@ -177,7 +177,7 @@ from numba import __version__ as numba__version__
 from parakeet import __version__ as parakeet__version__
 
 def print_sysinfo():
-
+    
     print '\nPython version  :', platform.python_version()
     print 'compiler        :', platform.python_compiler()
     print 'Cython version  :', cython__version__
@@ -185,7 +185,7 @@ def print_sysinfo():
     print 'Numba version   :', numba__version__
     print 'llvm version    :', llvm__version__
     print 'parakeet version:', parakeet__version__
-
+    
     print '\nsystem     :', platform.system()
     print 'release    :', platform.release()
     print 'machine    :', platform.machine()
@@ -211,7 +211,7 @@ def plot(timings, title, ranked_labels, labels, orders_n):
 
     fig = plt.figure(figsize=(11,10))
     for lb in ranked_labels:
-        plt.plot(orders_n, timings[lb], alpha=0.5, label=labels[lb],
+        plt.plot(orders_n, timings[lb], alpha=0.5, label=labels[lb], 
                  marker='o', lw=3)
     plt.xlabel('sample size n (items in the list)')
     plt.ylabel('time per computation in milliseconds')
@@ -230,13 +230,13 @@ def plot(timings, title, ranked_labels, labels, orders_n):
 import prettytable
 
 def summary_table(ranked_labels):
-    fit_table = prettytable.PrettyTable(['n=%s' %orders_n[-1],
+    fit_table = prettytable.PrettyTable(['n=%s' %orders_n[-1], 
                                          'bubblesort function' ,
                                          'time in millisec.',
                                          'rel. performance gain'])
     fit_table.align['bubblesort function'] = 'l'
     for entry in ranked_labels:
-        fit_table.add_row(['', labels[entry[1]], round(entry[0]*100, 3),
+        fit_table.add_row(['', labels[entry[1]], round(entry[0]*100, 3), 
                            round(ranked_labels[0][0]/entry[0], 2)])
         # times 100 for converting from seconds to milliseconds: (time*1000 / 10-loops)
     print(fit_table)
@@ -249,8 +249,8 @@ def summary_table(ranked_labels):
 
 title = 'Performance of Bubblesort in Python, Cython, parakeet, and Numba'
 
-labels = {'python_bubblesort':'(C)Python Bubblesort - Python lists',
-          'python_bubblesort_ary':'(C)Python Bubblesort - NumPy arrays',
+labels = {'python_bubblesort':'(C)Python Bubblesort - Python lists', 
+          'python_bubblesort_ary':'(C)Python Bubblesort - NumPy arrays',  
           'cython_bubblesort': 'Cython Bubblesort - NumPy arrays',
           'numba_bubblesort': 'Numba Bubblesort - NumPy arrays',
           'parakeet_bubblesort': 'parakeet Bubblesort - NumPy arrays'
@@ -263,7 +263,7 @@ plot(timings, title, [l for t,l in ranked_by_time], labels, orders_n)
 summary_table(ranked_by_time)
 
 
-# Note that the relative results also depend on what version of Python, Cython, Numba, parakeet, and NumPy you are using. Also, the compiler choice for installing NumPy can account for differences in the results.
+# Note that the relative results also depend on what version of Python, Cython, Numba, parakeet, and NumPy you are using. Also, the compiler choice for installing NumPy can account for differences in the results.  
 
 # # References
 
