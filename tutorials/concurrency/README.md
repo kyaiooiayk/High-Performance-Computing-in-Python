@@ -41,7 +41,7 @@
 ![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/21a2d169-01e6-4649-9b8d-668a2aaff1df)
 ![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/81d69a11-4279-4ee1-8f40-4652446315da)
 
-## CPU-bound vs. IO-bound?
+## 💻CPU-bound vs. IO-bound?
 - A **CPU-bound** task is a type of task where the limiting factor is the speed of the CPU than the limit of IO. Examples:
     - Calculating points in a fractal
     - Estimating P
@@ -60,7 +60,7 @@
 - **Important**: typically, processes are used for CPU-bound tasks and threads are used for IO-bound tasks, and this is a good heuristic, but this does not have to be the case. Again, this is an heuristic rule. At the end of the day, try and take what works best for you. 
 ***
 
-## How do I choose the best approach?
+## ⏩How do I choose the best approach?
 - **First question: CPU-bound vs. IO-bound?**
 
 ![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/523a7f76-c20e-4279-8bbb-9c24ba634624)
