@@ -8,6 +8,13 @@
 - Concurrency is not Parallelism. While concurrency implies that multiple tasks are in process simultaneously, it does not imply that they are running together in parallel.
 ***
 
+## ⚛️Atomic operation
+- An atomic operation is executed without interruption.
+- What happens in concurrent programming where context switch is a possibility?. The operating system controls what threads execute and what is paused via a context switch. 
+- A thread cannot be context switched in the middle of an atomic operation.
+- This means that an atomic operations is thread-safe (context-switch safe) as we can expect them to be completed once started.
+***
+
 ## 📦Packages
 - Native:
   - Python **multiprocessing** for process-based concurrency. A process refers to a computer program. Multiprocesses are appropriate for CPU-bound tasks, and not I/O-bound tasks.
@@ -23,7 +30,7 @@
     - uvloop: Ultra fast asyncio event loop.
 ***
 
-## What is for what: decision matrix?
+## ☑️What is for what: decision matrix?
     
 | Python module | Type of concurrency | Request & Execution | What they work on/ what they create? | Memory management | Usage | Control | Protection |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
