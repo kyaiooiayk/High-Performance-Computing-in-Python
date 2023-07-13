@@ -82,7 +82,7 @@ get_ipython().run_line_magic("load_ext", "cythonmagic")
 get_ipython().run_cell_magic(
     "cython",
     "",
-    'import numpy as np\ncimport numpy as np\ncimport cython\n@cython.boundscheck(False) \n@cython.wraparound(False)\n@cython.cdivision(True)\ncpdef cython_lstsqr(x_ary, y_ary):\n    """ Computes the least-squares solution to a linear matrix equation. """\n    cdef double x_avg, y_avg, var_x, cov_xy,\\\n         slope, y_interc, temp\n    cdef double[:] x = x_ary # memoryview\n    cdef double[:] y = y_ary\n    cdef unsigned long N, i\n    \n    N = x.shape[0]\n    x_avg = 0\n    y_avg = 0\n    for i in range(N):\n        x_avg += x[i]\n        y_avg += y[i]\n    x_avg = x_avg/N\n    y_avg = y_avg/N\n    var_x = 0\n    cov_xy = 0\n    for i in range(N):\n        temp = (x[i] - x_avg)\n        var_x += temp**2\n        cov_xy += temp*(y[i] - y_avg)\n    slope = cov_xy / var_x\n    y_interc = y_avg - slope*x_avg\n    return (slope, y_interc)',
+    'import numpy as np\ncimport numpy as np\ncimport cython\n@cython.boundscheck(False) \n@cython.wraparound(False)\n@cython.cdivision(True)\ncpdef cython_lstsqr(x_ary, y_ary):\n    """ Computes the least-squares solution to a linear matrix equation. """\n    cdef double x_avg, y_avg, var_x, cov_xy,\\\n         slope, y_interc, temp\n    cdef double[:] x = x_ary # memoryview\n    cdef double[:] y = y_ary\n    cdef unsigned long N, i\n    \n    N = x.shape[0]\n    x_avg = 0\n    y_avg = 0\n    for i in range(N):\n        x_avg += x[i]\n        y_avg += y[i]\n    x_avg = x_avg/N\n    y_avg = y_avg/N\n    var_x = 0\n    cov_xy = 0\n    for i in range(N):\n        temp = (x[i] - x_avg)\n        var_x += temp**2\n        cov_xy += temp*(y[i] - y_avg)\n    slope = cov_xy / var_x\n    y_interc = y_avg - slope*x_avg\n    return (slope, y_interc)\n',
 )
 
 
@@ -96,7 +96,7 @@ get_ipython().run_cell_magic(
 get_ipython().run_cell_magic(
     "cython",
     "",
-    'cimport cython\ncpdef cython_lstsqr_untyped(x_list, y_list):\n    """ Computes the least-squares solution to a linear matrix equation. """\n    N = len(x_list)\n    x_avg = sum(x_list)/N\n    y_avg = sum(y_list)/N\n    var_x, cov_xy = 0, 0\n    for x,y in zip(x_list, y_list):\n        temp = x - x_avg\n        var_x += temp**2\n        cov_xy += temp * (y - y_avg)\n    slope = cov_xy / var_x\n    y_interc = y_avg - slope*x_avg\n    return (slope, y_interc)',
+    'cimport cython\ncpdef cython_lstsqr_untyped(x_list, y_list):\n    """ Computes the least-squares solution to a linear matrix equation. """\n    N = len(x_list)\n    x_avg = sum(x_list)/N\n    y_avg = sum(y_list)/N\n    var_x, cov_xy = 0, 0\n    for x,y in zip(x_list, y_list):\n        temp = x - x_avg\n        var_x += temp**2\n        cov_xy += temp * (y - y_avg)\n    slope = cov_xy / var_x\n    y_interc = y_avg - slope*x_avg\n    return (slope, y_interc)\n',
 )
 
 
@@ -125,7 +125,7 @@ get_ipython().run_line_magic("load_ext", "fortranmagic")
 get_ipython().run_cell_magic(
     "fortran",
     "",
-    'SUBROUTINE fortran_lstsqr(ary_x, ary_y, slope, y_interc)\n    ! Computes the least-squares solution to a linear matrix equation. """\n    IMPLICIT NONE\n    REAL(8), INTENT(in), DIMENSION(:) :: ary_x, ary_y\n    REAL(8), INTENT(out) :: slope, y_interc\n    REAL(8) :: x_avg, y_avg, var_x, cov_xy, temp\n    INTEGER(8) :: N, i\n    \n    N = SIZE(ary_x)\n\n    x_avg = SUM(ary_x) / N\n    y_avg = SUM(ary_y) / N\n    var_x = 0\n    cov_xy = 0\n    \n    DO i = 1, N\n        temp = ary_x(i) - x_avg\n        var_x = var_x + temp**2\n        cov_xy = cov_xy + (temp*(ary_y(i) - y_avg))\n    END DO\n    \n    slope = cov_xy / var_x\n    y_interc = y_avg - slope*x_avg\n\nEND SUBROUTINE fortran_lstsqr',
+    'SUBROUTINE fortran_lstsqr(ary_x, ary_y, slope, y_interc)\n    ! Computes the least-squares solution to a linear matrix equation. """\n    IMPLICIT NONE\n    REAL(8), INTENT(in), DIMENSION(:) :: ary_x, ary_y\n    REAL(8), INTENT(out) :: slope, y_interc\n    REAL(8) :: x_avg, y_avg, var_x, cov_xy, temp\n    INTEGER(8) :: N, i\n    \n    N = SIZE(ary_x)\n\n    x_avg = SUM(ary_x) / N\n    y_avg = SUM(ary_y) / N\n    var_x = 0\n    cov_xy = 0\n    \n    DO i = 1, N\n        temp = ary_x(i) - x_avg\n        var_x = var_x + temp**2\n        cov_xy = cov_xy + (temp*(ary_y(i) - y_avg))\n    END DO\n    \n    slope = cov_xy / var_x\n    y_interc = y_avg - slope*x_avg\n\nEND SUBROUTINE fortran_lstsqr\n',
 )
 
 

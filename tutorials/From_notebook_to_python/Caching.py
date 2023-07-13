@@ -77,7 +77,7 @@ url = "http://google.co.uk"
 
 
 get_ipython().run_cell_magic(
-    "timeit", "-n 1", "# run it for the first time\nfetch_article(url)"
+    "timeit", "-n 1", "# run it for the first time\nfetch_article(url)\n"
 )
 
 
@@ -85,7 +85,7 @@ get_ipython().run_cell_magic(
 
 
 get_ipython().run_cell_magic(
-    "timeit", "-n 1", "# Run it again and it will be much faster\nfetch_article(url)"
+    "timeit", "-n 1", "# Run it again and it will be much faster\nfetch_article(url)\n"
 )
 
 
@@ -122,7 +122,7 @@ def extract_article_content(url):
 get_ipython().run_cell_magic(
     "timeit",
     "-n 1",
-    "# run it for the first time\ncontent = extract_article_content(url)",
+    "# run it for the first time\ncontent = extract_article_content(url)\n",
 )
 
 
@@ -132,7 +132,7 @@ get_ipython().run_cell_magic(
 get_ipython().run_cell_magic(
     "timeit",
     "-n 1",
-    "# run it for the first time\ncontent = extract_article_content(url)",
+    "# run it for the first time\ncontent = extract_article_content(url)\n",
 )
 
 

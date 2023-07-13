@@ -9,9 +9,9 @@
 
 # <div class="alert alert-warning">
 # <font color=black>
-#
+# 
 # **What?** Vectorisation
-#
+# 
 # </font>
 # </div>
 
@@ -20,22 +20,22 @@
 
 # <div class="alert alert-info">
 # <font color=black>
-#
-#
+# 
+#  
 # - Python is not the fastest programming language. So when you need to process a large amount of homogeneous data quickly, you’re told to rely on **vectorization**.
-#
+# 
 # - Let’s say we have a few million numbers in a list or array, and we want to do some mathematical operations on them. Since we know they are all numbers, and if we’re doing the same operation on all of the numbers, we can **vectorise** the operation, i.e. take advantage of this **homogeneity** of data and operation.
-#
+#     
 # - In python this means that a batch operation implemented in a fast language: say C.
-#
-# - Vectorization is used to speed up the Python code without using loop.
-#
-# - Recall that NumPy’s ND-arrays are **homogeneous**. this measn that an array can only contain data of a single type. For instance, an array can contain 8-bit integers or 32-bit floating point numbers, but not a mix of the two. This is in stark contrast to Python’s lists and tuples, which are entirely unrestricted in the variety of contents they can possess; a given list could simultaneously contain strings, integers, and other objects.
-#
-# - This restriction on an array’s contents comes at a great benefit; in “knowing” that an array’s contents are homogeneous in data type, NumPy is able to delegate the task of performing mathematical operations on the array’s contents to optimized, compiled C code. This is a process that is referred to as **vectorization**.
-#
+#     
+# - Vectorization is used to speed up the Python code without using loop. 
+#  
+# - Recall that NumPy’s ND-arrays are **homogeneous**. this measn that an array can only contain data of a single type. For instance, an array can contain 8-bit integers or 32-bit floating point numbers, but not a mix of the two. This is in stark contrast to Python’s lists and tuples, which are entirely unrestricted in the variety of contents they can possess; a given list could simultaneously contain strings, integers, and other objects. 
+# 
+# - This restriction on an array’s contents comes at a great benefit; in “knowing” that an array’s contents are homogeneous in data type, NumPy is able to delegate the task of performing mathematical operations on the array’s contents to optimized, compiled C code. This is a process that is referred to as **vectorization**. 
+#     
 # - The outcome of this can be a tremendous speedup relative to the analogous computation performed in Python, which **must painstakingly check** the data type of every one of the items as it iterates over the arrays, since Python typically works with lists with unrestricted contents.
-#
+# 
 # </font>
 # </div>
 
@@ -78,19 +78,13 @@ def perf():
             more_code(x)
             all_this_code_will_be_measured()
     """
-    p = Popen(
-        [
-            # Run perf stat
-            "perf",
-            "stat",
-            # for the current Python process
-            "-p",
-            str(getpid()),
-            # record the list of events mentioned above
-            "-e",
-            ",".join(events),
-        ]
-    )
+    p = Popen([
+        # Run perf stat
+        "perf", "stat",
+        # for the current Python process
+        "-p", str(getpid()),
+        # record the list of events mentioned above
+        "-e", ",".join(events)])
     # Ensure perf has started before running more
     # Python code. This will add ~0.1 to the elapsed
     # time reported by perf, so we also track elapsed
@@ -101,7 +95,8 @@ def perf():
         yield
     finally:
         print(f"Elapsed (seconds): {time() - start}")
-        print("Peak memory (MiB):", int(getrusage(RUSAGE_SELF).ru_maxrss / 1024))
+        print("Peak memory (MiB):",
+              int(getrusage(RUSAGE_SELF).ru_maxrss / 1024))
         p.send_signal(SIGINT)
 
 
@@ -109,14 +104,13 @@ def perf():
 
 
 from random import random
-
 DATA = [random() for _ in range(30_000_000)]
 
 
 # In[4]:
 
 
-with perf():
+with perf():    
     mean = sum(DATA) / len(DATA)
     result = [DATA[i] - mean for i in range(len(DATA))]
 
@@ -126,12 +120,16 @@ with perf():
 
 # <div class="alert alert-warning">
 # <font color=black>
-#
+# 
 # - https://pythonspeed.com/articles/vectorization-python/
 # - https://www.geeksforgeeks.org/vectorization-in-python/
 # - https://www.pythonlikeyoumeanit.com/Module3_IntroducingNumpy/VectorizedOperations.html
-#
+# 
 # </font>
 # </div>
 
 # In[ ]:
+
+
+
+
