@@ -9,9 +9,9 @@
 
 # <div class="alert alert-warning">
 # <font color=black>
-#
+# 
 # **What?** Memoisation and decorator
-#
+# 
 # </font>
 # </div>
 
@@ -20,11 +20,11 @@
 
 # <div class="alert alert-info">
 # <font color=black>
-#
-# - **Memoization** is a technique of recording the intermediate results so that it can be used to avoid repeated calculations and speed up the programs.
-# - It can be used to optimize the programs that use **recursion**.
-# - In Python, memoization can be done with the help of function **decorators**.
-#
+# 
+# - **Memoization** is a technique of recording the intermediate results so that it can be used to avoid repeated calculations and speed up the programs. 
+# - It can be used to optimize the programs that use **recursion**. 
+# - In Python, memoization can be done with the help of function **decorators**. 
+# 
 # </font>
 # </div>
 
@@ -40,7 +40,7 @@ def fib(n):
     elif n == 1:
         return 1
     else:
-        return fib(n - 1) + fib(n - 2)
+        return fib(n-1) + fib(n-2)
 
 
 fib(10)
@@ -51,14 +51,14 @@ fib(10)
 
 # <div class="alert alert-info">
 # <font color=black>
-#
-#
-# - We also presented a way to improve the runtime behaviour of the recursive version by adding a dictionary to memorize previously calculated values of the function.
+# 
+# 
+# - We also presented a way to improve the runtime behaviour of the recursive version by adding a dictionary to memorize previously calculated values of the function. 
 # - The disadvantage of this method is that the clarity and the beauty of the original recursive implementation is lost.
-#
+# 
 # - The "problem" is that we changed the code of the recursive fib function. The following code doesn't change our fib function, so that its clarity and legibility isn't touched. To this purpose, we define and use a function which we call memoize. memoize() takes a function as an argument. The function memoize uses a dictionary "memo" to store the function results. Though the variable "memo" as well as the function "f" are local to memoize, they are captured by a closure through the helper function which is returned as a reference by memoize(). So, the call memoize(fib) returns a reference to the helper() which is doing what fib() would do on its own plus a wrapper which saves the calculated results. For an integer 'n' fib(n) will only be called, if n is not in the memo dictionary. If it is in it, we can output memo[n] as the result of fib(n).
-#
-#
+# 
+#     
 # </font>
 # </div>
 
@@ -67,24 +67,18 @@ fib(10)
 
 def memoize(f):
     memo = {}
-
     def helper(x):
-        if x not in memo:
+        if x not in memo:            
             memo[x] = f(x)
         return memo[x]
-
     return helper
-
-
 def fib(n):
     if n == 0:
         return 0
     elif n == 1:
         return 1
     else:
-        return fib(n - 1) + fib(n - 2)
-
-
+        return fib(n-1) + fib(n-2)
 fib = memoize(fib)
 print(fib(10))
 
@@ -102,8 +96,7 @@ def fib(n):
     if n <= 2:
         return 1
     else:
-        return fib(n - 1) + fib(n - 2)
-
+        return fib(n-1) + fib(n-2)
 
 # A simple example of memoization - in practice, use `lru_cache` from functools
 
@@ -115,7 +108,6 @@ def memoize(f):
         if n not in store:
             store[n] = f(n)
         return store[n]
-
     return func
 
 
@@ -129,12 +121,12 @@ def lfib(n):
     return fib(n)
 
 
-assert fib(10) == mfib(10)
-assert fib(10) == lfib(10)
+assert(fib(10) == mfib(10))
+assert(fib(10) == lfib(10))
 
-get_ipython().run_line_magic("timeit", "- r1 - n10 fib(30)")
-get_ipython().run_line_magic("timeit", "- r1 - n10 mfib(30)")
-get_ipython().run_line_magic("timeit", "- r1 - n10 lfib(30)")
+get_ipython().run_line_magic('timeit', '- r1 - n10 fib(30)')
+get_ipython().run_line_magic('timeit', '- r1 - n10 mfib(30)')
+get_ipython().run_line_magic('timeit', '- r1 - n10 lfib(30)')
 
 
 # # via decorator
@@ -142,9 +134,9 @@ get_ipython().run_line_magic("timeit", "- r1 - n10 lfib(30)")
 
 # <div class="alert alert-info">
 # <font color=black>
-#
+# 
 # - We haven't used the Pythonic way of writing a decorator. Instead of writing the statement: `fib = memoize(fib)` we should have **decorated** our `fib` function with: `@memoize`
-#
+# 
 # </font>
 # </div>
 
@@ -158,7 +150,6 @@ def memoize(f):
         if x not in memo:
             memo[x] = f(x)
         return memo[x]
-
     return helper
 
 
@@ -169,7 +160,7 @@ def fib(n):
     elif n == 1:
         return 1
     else:
-        return fib(n - 1) + fib(n - 2)
+        return fib(n-1) + fib(n-2)
 
 
 print(fib(10))
@@ -199,7 +190,7 @@ def fib(n):
     elif n == 1:
         return 1
     else:
-        return fib(n - 1) + fib(n - 2)
+        return fib(n-1) + fib(n-2)
 
 
 print(fib(10))
@@ -210,11 +201,15 @@ print(fib(10))
 
 # <div class="alert alert-warning">
 # <font color=black>
-#
+# 
 # - https://people.duke.edu/~ccc14/sta-663-2016/A01_CodeOptimization.html
 # - https://python-course.eu/advanced-python/memoization-decorators.php
-#
+#     
 # </font>
 # </div>
 
 # In[ ]:
+
+
+
+

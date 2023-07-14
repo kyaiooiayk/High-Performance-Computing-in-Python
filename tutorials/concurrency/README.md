@@ -13,7 +13,7 @@
 - **What is it?** In CPython, the global interpreter lock, or GIL, is a mutex that protects access to Python objects, preventing multiple threads from executing Python bytecodes at once.
 - **What is the immediate benefit?** The GIL prevents race conditions and ensures thread safety.
 - **What does itmean in practice?** The effect of the GIL is that whenever a thread within a Python program wants to run, it must acquire the lock before executing. This is not a problem for most Python programs that have a single thread of execution, called the main thread.
-- **How often is the lock released?** The lock is explicitly released and re-acquired periodically by each Python thread, specifically after approximately every 100 bytecode instructions executed within the interpreter. This allows other threads within the Python process to run, if present. 
+- **How often is the lock released?** The lock is explicitly released and re-acquired periodically by each Python thread, specifically after approximately every 100 bytecode instructions executed within the interpreter. This allows other threads within the Python process to run, if present.
 - **What is the downside?** Full multithreading is not supported by Python.
 - **How does numpy manage to be so fast?** Numpy works around this limitation by running external code in C.
 ***
@@ -42,10 +42,10 @@
 
 ## ☑️What is for what: decision matrix?
     
-| Python module | Type of concurrency | Request & Execution | What they work on/ what they create? | Memory management | Usage | Control | Protection |
+| Python module | Type of concurrency | Request & Execution | What they work on/ what they create? | Memory management | Usage | Control | Notes |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | `multiprocessing` | Process-based | | A process refers to a computer program. Each process is in fact one instance of the Python interpreter that executes Python instructions (Python byte-code). | Processes do not have shared memory, instead, data is transmitted between processes using inter-process communication. | CPU-bound tasks | Operating system controls when a process is suspended, resumed and executed. | Requires `if __name__ == '__main__'` |
-| `threading` | Thread-based within a process | | A thread refers to a thread of execution by a computer program. Every Python program is a process with has at least one thread called the main thread used to execute your program instructions. | | IO-bound tasks | Operating system controls when a thread is suspended, resumed and executed. | |
+| `threading` | Thread-based within a process | | A thread refers to a thread of execution by a computer program. Every Python program is a process with has at least one thread called the main thread used to execute your program instructions. | | IO-bound tasks | Operating system controls when a thread is suspended, resumed and executed. | GIL requires each thread to acquire a lock before execution. Even if you have 1k threads, only one thread is allowed to be executed in parallel.  |
 | `asyncio` | Coroutine-based within a thread | An action is requested but not performed at the same time. The function call will not wait and we can request data later. It allows called to perform other activities. | A coroutine is a unit of concurrency that is more lightweight than a thread. A single thread may execute many coroutines in an event loop. | | Non-blocking I/O | Coroutines themselves controls when a process is suspended, resumed and executed. | |
 
 ![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/21a2d169-01e6-4649-9b8d-668a2aaff1df)

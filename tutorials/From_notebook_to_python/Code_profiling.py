@@ -8,9 +8,9 @@
 
 # <div class="alert alert-warning">
 # <font color=black>
-#
+# 
 # **What?** Code profiling
-#
+# 
 # </font>
 # </div>
 
@@ -19,49 +19,49 @@
 
 # <div class="alert alert-info">
 # <font color=black>
-#
+# 
 # - `%timeit`: times only the line and runs the line it many times and gives more statistics.
 # - `%%timeit`: times the whole cell and runs the it many times and gives more statistics.
-#
-#
+# 
+#     
 # - `%time` and `%%time` times it but extecuted it only **once**.
-#
+# 
 # </font>
 # </div>
 
 # In[1]:
 
 
-get_ipython().run_cell_magic("timeit", "-n1000", "l = [k for k in range(10**2)]\n")
+get_ipython().run_cell_magic('timeit', '-n1000', 'l = [k for k in range(10**2)]\n')
 
 
 # In[2]:
 
 
-get_ipython().run_line_magic("timeit", "-n1000 l = [k for k in range(10**2)]")
+get_ipython().run_line_magic('timeit', '-n1000 l = [k for k in range(10**2)]')
 
-get_ipython().run_line_magic("timeit", "-n10 l = [k for k in range(10**2)]")
+get_ipython().run_line_magic('timeit', '-n10 l = [k for k in range(10**2)]')
 
 
 # In[3]:
 
 
 # This would not work!
-get_ipython().run_line_magic("timeit", "-n1000")
+get_ipython().run_line_magic('timeit', '-n1000')
 l = [k for k in range(10**2)]
 
 
 # In[4]:
 
 
-get_ipython().run_line_magic("time", "l = [k for k in range(10**2)]")
+get_ipython().run_line_magic('time', 'l = [k for k in range(10**2)]')
 
 
 # In[5]:
 
 
 # Saving the output
-o = get_ipython().run_line_magic("timeit", "-o l = [k for k in range(10**2)]")
+o = get_ipython().run_line_magic('timeit', '-o l = [k for k in range(10**2)]')
 
 
 # In[6]:
@@ -72,28 +72,25 @@ print(o)
 
 # <div class="alert alert-info">
 # <font color=black>
-#
+# 
 # - Setting the number of runs `-r` and/or loops `-n`
-#
+# 
 # </font>
 # </div>
 
 # In[3]:
 
 
-# Set number of runs to 2 (-r2)
-# Set number of loops to 10 (-n10)
+# Set number of runs to 2 (-r2) 
+# Set number of loops to 10 (-n10) 
 import numpy as np
-
-get_ipython().run_line_magic("timeit", "-r2 -n10 rand_nums = np.random.rand(1000)")
+get_ipython().run_line_magic('timeit', '-r2 -n10 rand_nums = np.random.rand(1000)')
 
 
 # In[11]:
 
 
-times = get_ipython().run_line_magic(
-    "timeit", "-r10 -n10 -o rand_nums = np.random.rand(1000)"
-)
+times = get_ipython().run_line_magic('timeit', '-r10 -n10 -o rand_nums = np.random.rand(1000)')
 
 
 # In[12]:
@@ -114,12 +111,12 @@ print(times.worst)
 
 # <div class="alert alert-info">
 # <font color=black>
-#
+# 
 # - `%prun`  = Run code with the profiler
 # - `%lprun` = Run code with the line-by-line profiler
 # - `%memit` = Measure the memory use of a single statement
 # - `%mprun` = Run code with the line-by-line memory profiler
-#
+# 
 # </font>
 # </div>
 
@@ -127,9 +124,8 @@ print(times.worst)
 
 
 import sys
-
-get_ipython().run_line_magic("load_ext", "line_profiler")
-get_ipython().run_line_magic("load_ext", "memory_profiler")
+get_ipython().run_line_magic('load_ext', 'line_profiler')
+get_ipython().run_line_magic('load_ext', 'memory_profiler')
 
 
 # In[8]:
@@ -148,7 +144,7 @@ def sum_of_lists(N):
 
 # to access the output on the output cell rather than a popup window
 # https://github.com/ipython/ipython/issues/2091/
-p = get_ipython().run_line_magic("prun", "- r sum_of_lists(1000000)")
+p = get_ipython().run_line_magic('prun', '- r sum_of_lists(1000000)')
 p.stream = sys.stdout
 p.print_stats()
 
@@ -156,7 +152,7 @@ p.print_stats()
 # In[10]:
 
 
-p = get_ipython().run_line_magic("lprun", "- rf sum_of_lists sum_of_lists(5000)")
+p = get_ipython().run_line_magic('lprun', '- rf sum_of_lists sum_of_lists(5000)')
 p.stream = sys.stdout
 p.print_stats()
 
@@ -164,23 +160,23 @@ p.print_stats()
 # In[11]:
 
 
-p = get_ipython().run_line_magic("memit", "sum_of_lists(5000)")
+p = get_ipython().run_line_magic('memit', 'sum_of_lists(5000)')
 
 
 # <div class="alert alert-info">
 # <font color=black>
-#
+# 
 # - To be able to use `mprun` magic command, we have to store the function locally.
 # - This is done automatically my writing `%%file sum_of_lists.py` which saves a local file
 # called `file sum_of_lists.py`
-#
+# 
 # </font>
 # </div>
 
 # In[21]:
 
 
-get_ipython().system("ls")
+get_ipython().system('ls')
 
 
 # In[28]:
@@ -194,14 +190,13 @@ get_ipython().system("ls")
 # In[29]:
 
 
-get_ipython().run_cell_magic(
-    "file",
-    "sum_of_lists.py",
-    "def sum_of_lists(N): \n    total = 0\n    for i in range(5): \n            L=[j^(j>>i) for j in range(N)] \n            total += sum(L)\n    return total\n",
-)
+get_ipython().run_cell_magic('file', 'sum_of_lists.py', 'def sum_of_lists(N): \n    total = 0\n    for i in range(5): \n            L=[j^(j>>i) for j in range(N)] \n            total += sum(L)\n    return total\n')
 
 
 # In[30]:
+
+
+
 
 
 # In[32]:
@@ -209,12 +204,11 @@ get_ipython().run_cell_magic(
 
 # You now have to import the function explcitly
 from sum_of_lists import sum_of_lists
-
-m = get_ipython().run_line_magic("mprun", "-rf sum_of_lists sum_of_lists(5000)")
+m = get_ipython().run_line_magic('mprun', '-rf sum_of_lists sum_of_lists(5000)')
 m.stream = sys.stdout
 m
 # We'll delete the file as it is not needed!
-get_ipython().system("rm sum_of_lists.py")
+get_ipython().system('rm sum_of_lists.py')
 
 
 # In[16]:
@@ -228,3 +222,7 @@ dir(m)
 
 
 # In[ ]:
+
+
+
+

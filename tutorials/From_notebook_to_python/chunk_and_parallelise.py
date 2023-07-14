@@ -9,22 +9,27 @@ import numpy as np
 import multiprocess as mp
 
 
-# In[196]:
+# In[2]:
 
 
-def _get_no_thread(no_thread):
-    return mp.cpu_count() if (no_thread == -1) else no_thread
+def _get_no_cpu(no_cpu):    
+    return mp.cpu_count() if (no_cpu == -1) else no_cpu
+    
+    
+def para(
+    func_: None = None,
+    no_cpu: int = 1
+):    
 
-
-def para(func_: None = None, no_thread: int = 1):
     def _decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
+
             print("argument", *args)
             print("kwargs", *kwargs)
-
-            _no_thread = _get_no_thread(no_thread)
-
+            
+            _no_thread = _get_no_cpu(no_cpu)
+            
             chunks = np.array_split([*args[0]], _no_thread)
 
             pool = mp.Pool(processes=_no_thread)
@@ -43,50 +48,46 @@ def para(func_: None = None, no_thread: int = 1):
         raise RuntimeWarning("Positional arguments are not supported!")
 
 
-# In[192]:
+# In[3]:
 
 
 import psutil
+print("How many LOGICAL CPUs?", psutil.cpu_count(
+    logical=True))
+print("How many PHYSICAL CPUs?", psutil.cpu_count(
+    logical=False))
 
-print("How many LOGICAL CPUs?", psutil.cpu_count(logical=True))
-print("How many PHYSICAL CPUs?", psutil.cpu_count(logical=False))
 
-
-# In[194]:
+# In[4]:
 
 
 import time
-
-
-def func(x):
+def func(x):    
     # Emulate expensive calculation
     def WAIT(x):
         time.sleep(1)
         return x
-
+    
     # Emulate a real ouput
     z = [WAIT(i) for i in x]
     return z
-
-
 output = func(range(10))
 output
 
 
-# In[197]:
+# In[9]:
 
 
-@para(no_thread=10)
-def func(x):
+@para(no_cpu=12)
+def func(x):    
     # Do expensive calculation
     def WAIT(x):
         time.sleep(1)
         return x
-
+    
     # Emulate a real ouput
     z = [WAIT(i) for i in x]
     return z
-
 
 output = func(range(10))
 output
@@ -95,7 +96,17 @@ output
 # In[ ]:
 
 
+
+
+
 # In[ ]:
 
 
+
+
+
 # In[ ]:
+
+
+
+
