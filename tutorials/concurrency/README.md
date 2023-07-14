@@ -46,7 +46,7 @@
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
 | `multiprocessing` | Process-based | | A process refers to a computer program. Each process is in fact one instance of the Python interpreter that executes Python instructions (Python byte-code). | Processes do not have shared memory, instead, data is transmitted between processes using inter-process communication. | CPU-bound tasks | Operating system controls when a process is suspended, resumed and executed. | Requires `if __name__ == '__main__'` |
 | `threading` | Thread-based within a process | | A thread refers to a thread of execution by a computer program. Every Python program is a process with has at least one thread called the main thread used to execute your program instructions. | | IO-bound tasks | Operating system controls when a thread is suspended, resumed and executed. | GIL requires each thread to acquire a lock before execution. Even if you have 1k threads, only one thread is allowed to be executed in parallel. This is true onlu for CPython, other implementation such as Jython and IronPython do not implement GIL. |
-| `asyncio` | Coroutine-based within a thread. Coroutines can be entered,, exited, and resumed at many different points. | An action is requested but not performed at the same time. The function call will not wait and we can request data later. It allows the caller to perform other activities. | A coroutine is a unit of concurrency that is more lightweight than a thread. A single thread may execute many coroutines in an event loop. | | Non-blocking I/O | Coroutines themselves controls when a process is suspended, resumed and executed. | |
+| `asyncio` | Coroutine-based within a thread. Coroutines can be entered,, exited, and resumed at many different points. | An action is requested but not performed at the same time. The function call will not wait and we can request data later. It allows the caller to perform other activities. | A coroutine is a unit of concurrency that is more lightweight than a thread. A single thread may execute many coroutines in an event loop. | | Non-blocking I/O | Coroutines themselves controls when a process is suspended, resumed and executed. | All coroutines run in a single thread. As such the GIL is not an issue when using asyncio and coroutine. |
 
 ![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/21a2d169-01e6-4649-9b8d-668a2aaff1df)
 ![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/81d69a11-4279-4ee1-8f40-4652446315da)
@@ -73,6 +73,12 @@
 ## 🎛Mixing processes and threads
 - We can start new threads in a child Process.
 - For example, this is a common requirement when we need to perform many IO-bound tasks within each child process.
+***
+
+## ⁉️Asyncio vs. Threads ?
+- Any program developed using threads can be rewritten to use asyncio and coroutines.
+- Any program developed using coroutines and asyncio can be rewritten to use threads.
+- Adopting asyncio in a project is a choice, the rationale is yours. For the most part, they are functionally equivalent.
 ***
 
 ## ⏩How do I choose the best approach?
