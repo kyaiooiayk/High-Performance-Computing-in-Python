@@ -8,6 +8,16 @@
 - Concurrency is not Parallelism. While concurrency implies that multiple tasks are in process simultaneously, it does not imply that they are running together in parallel.
 ***
 
+## 🔐GIL = Global Interpreter Lock
+- **Why was it created?** The GIL was created because CPython’s memory management is not thread-safe. With only one thread running at a time, CPython can rest assured there will never be race conditions.
+- **What is it?** In CPython, the global interpreter lock, or GIL, is a mutex that protects access to Python objects, preventing multiple threads from executing Python bytecodes at once.
+- **What is the immediate benefit?** The GIL prevents race conditions and ensures thread safety.
+- **What does itmean in practice?** The effect of the GIL is that whenever a thread within a Python program wants to run, it must acquire the lock before executing. This is not a problem for most Python programs that have a single thread of execution, called the main thread.
+- **How often is the lock released?** The lock is explicitly released and re-acquired periodically by each Python thread, specifically after approximately every 100 bytecode instructions executed within the interpreter. This allows other threads within the Python process to run, if present. 
+- **What is the downside?** Full multithreading is not supported by Python.
+- **How does numpy manage to be so fast?** Numpy works around this limitation by running external code in C.
+***
+
 ## ⚛️Atomic operation
 - An atomic operation is executed without interruption.
 - What happens in concurrent programming where context switch is a possibility?. The operating system controls what threads execute and what is paused via a context switch. 
@@ -75,7 +85,7 @@
 
 ***
 
-## References
+## 📒References
 - [Superfastpython](https://superfastpython.com)
 - [How to choose btw APIs?](https://superfastpython.com/python-concurrency-choose-api/)
 - [Notes on high-performing computing](https://drive.google.com/drive/u/1/folders/13mzxrofldkbdgF_eT5EPZ1cEiCgOT78d)
