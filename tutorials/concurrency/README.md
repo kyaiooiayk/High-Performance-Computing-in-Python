@@ -70,6 +70,11 @@
 - **Important**: typically, processes are used for CPU-bound tasks and threads are used for IO-bound tasks, and this is a good heuristic, but this does not have to be the case. Again, this is an heuristic rule. At the end of the day, try and take what works best for you. 
 ***
 
+## 🎛Mixing processes and threads
+- We can start new threads in a child Process.
+- For example, this is a common requirement when we need to perform many IO-bound tasks within each child process.
+***
+
 ## ⏩How do I choose the best approach?
 - **First question: CPU-bound vs. IO-bound?**
 
