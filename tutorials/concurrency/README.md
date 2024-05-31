@@ -50,6 +50,7 @@
 
 ![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/21a2d169-01e6-4649-9b8d-668a2aaff1df)
 ![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/81d69a11-4279-4ee1-8f40-4652446315da)
+![image](https://github.com/kyaiooiayk/High-Performance-Computing-in-Python/assets/89139139/1f81449a-451a-4378-b669-bcbe91f9f64a)
 
 ## 💻CPU-bound vs. IO-bound?
 - A **CPU-bound** task is a type of task where the limiting factor is the speed of the CPU than the limit of IO. Examples:
@@ -101,4 +102,5 @@
 - [How to choose btw APIs?](https://superfastpython.com/python-concurrency-choose-api/)
 - [Notes on high-performing computing](https://drive.google.com/drive/u/1/folders/13mzxrofldkbdgF_eT5EPZ1cEiCgOT78d)
 - [Python Concurrency Glossary](https://superfastpython.com/python-concurrency-glossary/)
+- [Making lunch faster with Python concurrency](https://sourcery.ai/blog/concurrency/)
 ***
