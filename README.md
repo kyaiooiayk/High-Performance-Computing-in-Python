@@ -67,4 +67,5 @@
 - [Need for speed](https://github.com/QuantEcon/lecture-python-programming.notebooks/blob/master/need_for_speed.ipynb)
 - [Parallelisation](https://github.com/QuantEcon/lecture-python-programming.notebooks/blob/master/parallelization.ipynb)
 - [SuperFastPython](https://superfastpython.com/learning-paths/#Threading_Learning_Path)
+- [Concurrency vs. Parallelism](https://www.youtube.com/watch?v=RlM9AfWf1WU)
 ***
